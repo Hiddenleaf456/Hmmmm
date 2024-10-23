@@ -6,41 +6,43 @@ export default function ApiList() {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start', // Aligning items to the left
       height: '100vh',
-      backgroundColor: '#1a1a1a',
+      backgroundColor: '#121212',
       color: '#fff',
-      padding: '50px',
+      padding: '50px 20px',
       fontFamily: 'Arial, sans-serif',
     }}>
       <h1 style={{
-        fontSize: '3rem',
+        fontSize: '3.5rem',
         color: '#00e676',
         fontWeight: 'bold',
         textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)',
-        marginBottom: '20px',
+        marginBottom: '40px',
       }}>
-        Available APIs
+        Explore Our APIs
       </h1>
 
       <div style={{
+        width: '100%',
+        maxWidth: '600px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        gap: '40px', // Space between buttons
       }}>
         {/** GPT-3 API **/}
         <Link href="/api/chat?question=hello">
           <a style={{
             backgroundColor: '#00e676',
             color: '#000',
-            padding: '12px 24px',
-            borderRadius: '8px',
-            fontSize: '1.2rem',
+            padding: '15px 30px',
+            borderRadius: '10px',
+            fontSize: '1.3rem',
             textDecoration: 'none',
-            marginBottom: '30px', // Small space between buttons
+            textAlign: 'left', // Align text to the left
             transition: 'background-color 0.3s ease, transform 0.3s ease',
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
           }}
           onMouseOver={e => {
             e.target.style.backgroundColor = '#00c853';
@@ -59,13 +61,13 @@ export default function ApiList() {
           <a style={{
             backgroundColor: '#00e676',
             color: '#000',
-            padding: '12px 24px',
-            borderRadius: '8px',
-            fontSize: '1.2rem',
+            padding: '15px 30px',
+            borderRadius: '10px',
+            fontSize: '1.3rem',
             textDecoration: 'none',
-            marginBottom: '30px',
+            textAlign: 'left',
             transition: 'background-color 0.3s ease, transform 0.3s ease',
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
           }}
           onMouseOver={e => {
             e.target.style.backgroundColor = '#00c853';
@@ -84,13 +86,13 @@ export default function ApiList() {
           <a style={{
             backgroundColor: '#00e676',
             color: '#000',
-            padding: '12px 24px',
-            borderRadius: '8px',
-            fontSize: '1.2rem',
+            padding: '15px 30px',
+            borderRadius: '10px',
+            fontSize: '1.3rem',
             textDecoration: 'none',
-            marginBottom: '30px',
+            textAlign: 'left',
             transition: 'background-color 0.3s ease, transform 0.3s ease',
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
           }}
           onMouseOver={e => {
             e.target.style.backgroundColor = '#00c853';
@@ -110,6 +112,7 @@ export default function ApiList() {
           color: '#00e676',
           textDecoration: 'underline',
           marginTop: '20px',
+          alignSelf: 'flex-start', // Aligning the back link to the left
         }}>
           Back to Dashboard
         </a>
