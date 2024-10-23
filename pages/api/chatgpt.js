@@ -1,4 +1,3 @@
-
 // ./pages/api/chat.js
 
 import fetch from 'node-fetch';
@@ -10,12 +9,11 @@ export default async function handler(req, res) {
     const question = query.question;
 
     try {
-      // Replace this URL with your actual OpenAI API endpoint and add your API key
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer YOUR_API_KEY`, // Add your OpenAI API key here
+          'Authorization': `Bearer sk-proj-pBksWDImP6VuvvJTvqDsT3BlbkFJ2E8GhbpzjyRFkFaBI9Aj`, // Your API key
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
