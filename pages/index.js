@@ -8,7 +8,7 @@ export default function Dashboard() {
       <p style={{ fontSize: '1.5rem', marginTop: '20px', textAlign: 'center' }}>
         Access Our Free Unlimited APIs<br />
         To use GPT-3 API{' '}
-        <Link href="/api/chat?question=">
+        <Link href="/api/chat?question=hello">
           <a style={{ color: '#0070f3', textDecoration: 'underline' }}>click here</a>
         </Link>
       </p>
