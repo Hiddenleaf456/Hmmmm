@@ -2,7 +2,11 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-const users = [];
+// Hash the password "rias" and store it
+const hashedPassword = bcrypt.hashSync('rias', 10);
+const users = [
+  { username: 'toxxic', password: hashedPassword }
+];
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
