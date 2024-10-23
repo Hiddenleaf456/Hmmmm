@@ -53,7 +53,7 @@ export default function ApiList() {
               e.target.style.backgroundColor = '#00e676';
               e.target.style.transform = 'scale(1)';
             }}>
-              GPT-3 API
+              GPT-4 API
             </a>
           </Link>
 
