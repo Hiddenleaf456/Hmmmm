@@ -1,6 +1,5 @@
-
 {
-  "name": "nextjs-api-dashboard",
+  "name": "toxxic-api-dashboard",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +10,8 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "node-fetch": "^2.6.7",  // For server-side API requests
+    "dotenv": "^16.0.3"      // For loading environment variables securely
   }
 }
