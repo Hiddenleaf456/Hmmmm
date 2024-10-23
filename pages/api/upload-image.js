@@ -1,7 +1,6 @@
 // pages/api/upload-image.js
 import formidable from 'formidable';
 import fetch from 'node-fetch';
-import fs from 'fs';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -30,33 +29,33 @@ export default async function handler(req, res) {
 
     try {
       // Fetch API key from environment variables
-      const apiKey = process.env.IMBUR_API_KEY;
+      const apiKey = process.env.IMGBB_API_KEY;
 
       if (!apiKey) {
-        throw new Error('Missing Imbur API key in environment variables');
+        throw new Error('Missing ImgBB API key in environment variables');
       }
 
-      const fileStream = fs.createReadStream(image.filepath);
-      const response = await fetch('https://api.imbur.com/v1/image/upload', {
+      // Create a FormData object to send the image file
+      const formData = new FormData();
+      formData.append('image', fs.createReadStream(image.filepath));
+
+      // Make a request to the ImgBB API
+      const response = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'multipart/form-data',
-        },
-        body: fileStream,
+        body: formData,
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error?.message || 'Failed to upload image to Imbur');
+        throw new Error(data.error?.message || 'Failed to upload image to ImgBB');
       }
 
-      const imageUrl = data.url; // Adjust based on the API response structure
+      const imageUrl = data.data.url; // The URL of the uploaded image
       res.status(200).json({ 
         success: true, 
         imageUrl, 
-        author: 'Toxxic' // Add author field here
+        author: 'Toxxic' // Include the author field
       });
 
     } catch (error) {
