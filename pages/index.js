@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function Dashboard() {
+  const [uptime, setUptime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const fetchUptime = async () => {
+      const response = await fetch('/api/uptime');
+      const data = await response.json();
+      setUptime(data);
+    };
+
+    // Fetch uptime initially and then every 10 seconds
+    fetchUptime();
+    const interval = setInterval(fetchUptime, 10000); // Update every 10 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
     <div style={{
       display: 'flex',
@@ -34,12 +50,21 @@ export default function Dashboard() {
         Your one-stop shop for free APIs!
       </p>
 
+      {/* Uptime Display */}
+      <p style={{
+        fontSize: '1.5rem',
+        marginTop: '20px',
+        color: '#b3b3b3',
+      }}>
+        Uptime: {uptime.days} days, {uptime.hours} hours, {uptime.minutes} minutes, {uptime.seconds} seconds
+      </p>
+
       <div style={{
         display: 'flex',
         justifyContent: 'center',
         marginTop: '40px',
       }}>
-        {/** Button to view APIs **/}
+        {/* Button to view APIs */}
         <Link href="/api-list">
           <a style={{
             backgroundColor: '#00e676',
