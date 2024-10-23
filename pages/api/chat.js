@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer sk-proj-pBksWDImP6VuvvJTvqDsT3BlbkFJ2E8GhbpzjyRFkFaBI9Aj`, // Your API key
+          'Authorization': `Bearer sk-TGhX2mUrViSyAzqhOoVCzgmV1tpUdj2Jkn9_WWnyTUT3BlbkFJiji_I9fH_riCLebSs3V2lXPJPYUrFOLvoLGg4-MHQA, // Your API key
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
