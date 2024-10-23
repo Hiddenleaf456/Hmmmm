@@ -12,6 +12,12 @@ export default function Dashboard() {
           <a style={{ color: '#0070f3', textDecoration: 'underline' }}>click here</a>
         </Link>
       </p>
+      <p style={{ fontSize: '1.5rem', marginTop: '20px', textAlign: 'center' }}>
+        To upload an image and get its URL{' '}
+        <Link href="/api/upload-image">
+          <a style={{ color: '#0070f3', textDecoration: 'underline' }}>click here</a>
+        </Link>
+      </p>
     </div>
   );
 }
