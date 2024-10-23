@@ -17,9 +17,9 @@ export default async function handler(req, res) {
         },
       });
 
-      const data = await response.json();
+      const data = await data.json();
 
-      if (!response.ok) {
+      if (!data.ok) {
         throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
 
