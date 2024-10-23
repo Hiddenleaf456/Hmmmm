@@ -53,7 +53,7 @@ export default function ApiList() {
               e.target.style.backgroundColor = '#00e676';
               e.target.style.transform = 'scale(1)';
             }}>
-              Use GPT-3 API
+              GPT-3 API
             </a>
           </Link>
 
@@ -78,12 +78,12 @@ export default function ApiList() {
               e.target.style.backgroundColor = '#00e676';
               e.target.style.transform = 'scale(1)';
             }}>
-              Upload Image
+              IMG TO URL
             </a>
           </Link>
 
           {/** YouTube Download API **/}
-          <Link href="/api/ytdl?query=">
+          <Link href="/api/ytdl?query=oseba">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
@@ -103,7 +103,7 @@ export default function ApiList() {
               e.target.style.backgroundColor = '#00e676';
               e.target.style.transform = 'scale(1)';
             }}>
-              Download YouTube Videos
+              YTDL QUERY
             </a>
           </Link>
         </div>
