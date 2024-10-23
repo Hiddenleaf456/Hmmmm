@@ -6,33 +6,24 @@ export default async function handler(req, res) {
 
   if ((req.method === 'GET' || req.method === 'POST') && question) {
     try {
-      // Fetch API key from environment variables
-      const apiKey = process.env.OPENAI_API_KEY;
+      // Construct the URL for the chatbot API
+      const apiUrl = `https://itzpire.com/ai/hercai-chat?model=v3&q=${encodeURIComponent(question)}`;
 
-      if (!apiKey) {
-        throw new Error('Missing OpenAI API key in environment variables');
-      }
-
-      // Make a request to the OpenAI API
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
+      // Make a request to the chatbot API
+      const response = await fetch(apiUrl, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: question }],
-        }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error?.message || 'Failed to fetch from OpenAI API');
+        throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
 
-      const answer = data.choices[0]?.message?.content;
+      const answer = data.answer; // Adjust based on the actual structure of the response
       res.status(200).json({ answer });
 
     } catch (error) {
