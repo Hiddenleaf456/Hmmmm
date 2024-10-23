@@ -25,7 +25,7 @@ const rateLimit = (limit, timeWindow) => {
 };
 
 export default function handler(req, res) {
-  const applyRateLimit = rateLimit(100, 60 * 1000); // 100 requests per minute
+  const applyRateLimit = rateLimit(50, 60 * 1000); // 100 requests per minute
 
   applyRateLimit(req, res, () => {
     res.status(200).json({ message: 'Request successful' });
