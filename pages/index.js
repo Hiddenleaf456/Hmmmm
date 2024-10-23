@@ -31,25 +31,23 @@ export default function Dashboard() {
         lineHeight: '1.6',
         color: '#b3b3b3',
       }}>
-        Access our free, unlimited APIs for seamless integration into your projects!
+        Your one-stop shop for free APIs!
       </p>
 
       <div style={{
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        justifyContent: 'center',
         marginTop: '40px',
       }}>
-        {/** Link to GPT-3 API **/}
-        <Link href="/api/chat?question=hello">
+        {/** Button to view APIs **/}
+        <Link href="/api-list">
           <a style={{
             backgroundColor: '#00e676',
             color: '#000',
-            padding: '12px 24px',
+            padding: '14px 28px',
             borderRadius: '8px',
             fontSize: '1.2rem',
             textDecoration: 'none',
-            marginBottom: '10px', // Small space between buttons
             transition: 'background-color 0.3s ease, transform 0.3s ease',
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
           }}
@@ -61,60 +59,10 @@ export default function Dashboard() {
             e.target.style.backgroundColor = '#00e676';
             e.target.style.transform = 'scale(1)';
           }}>
-            Use GPT-3 API
-          </a>
-        </Link>
-
-        {/** Link to Image Upload API **/}
-        <Link href="/api/upload-image">
-          <a style={{
-            backgroundColor: '#00e676',
-            color: '#000',
-            padding: '12px 24px',
-            borderRadius: '8px',
-            fontSize: '1.2rem',
-            textDecoration: 'none',
-            marginBottom: '10px', // Small space between buttons
-            transition: 'background-color 0.3s ease, transform 0.3s ease',
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-          }}
-          onMouseOver={e => {
-            e.target.style.backgroundColor = '#00c853';
-            e.target.style.transform = 'scale(1.05)';
-          }}
-          onMouseOut={e => {
-            e.target.style.backgroundColor = '#00e676';
-            e.target.style.transform = 'scale(1)';
-          }}>
-            Upload Image
-          </a>
-        </Link>
-
-        {/** Link to YouTube Download API **/}
-        <Link href="/api/ytdl">
-          <a style={{
-            backgroundColor: '#00e676',
-            color: '#000',
-            padding: '12px 24px',
-            borderRadius: '8px',
-            fontSize: '1.2rem',
-            textDecoration: 'none',
-            marginBottom: '10px', // Small space between buttons
-            transition: 'background-color 0.3s ease, transform 0.3s ease',
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-          }}
-          onMouseOver={e => {
-            e.target.style.backgroundColor = '#00c853';
-            e.target.style.transform = 'scale(1.05)';
-          }}
-          onMouseOut={e => {
-            e.target.style.backgroundColor = '#00e676';
-            e.target.style.transform = 'scale(1)';
-          }}>
-            Download YouTube Videos
+            View APIs
           </a>
         </Link>
       </div>
     </div>
   );
-          }
+}
