@@ -1,0 +1,43 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  max-width: 600px; /* Limits the width of the description */
+}
+
+.button-container {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+}
+
+.button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #ff4c4c; /* Button color */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s, transform 0.2s; /* Animation */
+}
+
+.button:hover {
+  background-color: #ff2e2e; /* Darker shade on hover */
+  transform: scale(1.05); /* Scale effect on hover */
+}
