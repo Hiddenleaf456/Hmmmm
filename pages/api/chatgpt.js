@@ -3,11 +3,12 @@
 import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
-  const { query } = req; // Get the query parameters
+  const { query, body } = req; // Get the query parameters and body
 
-  if (req.method === 'GET' && query.question) {
-    const question = query.question;
+  // Determine the question based on the method
+  const question = req.method === 'GET' ? query.question : body.question;
 
+  if ((req.method === 'GET' || req.method === 'POST') && question) {
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -30,7 +31,7 @@ export default async function handler(req, res) {
       res.status(500).json({ error: 'Failed to fetch answer' });
     }
   } else {
-    res.setHeader('Allow', ['GET']);
+    res.setHeader('Allow', ['GET', 'POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
