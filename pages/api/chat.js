@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       // Construct the URL for the chatbot API
       const apiUrl = `https://itzpire.com/ai/hercai-chat?model=v3&q=${encodeURIComponent(question)}`;
 
-      // Make a request to the chatbot API
+      // Make a request to the external chatbot API
       const response = await fetch(apiUrl, {
         method: 'GET',
         headers: {
@@ -17,20 +17,20 @@ export default async function handler(req, res) {
         },
       });
 
-      const data = await data.json();
+      const data = await response.json();
 
-      if (!data.ok) {
+      if (!response.ok) {
         throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
 
-      // Return the response in the required format
+      // Relay the external API's response but modify the author field
       res.status(200).json({
-        status: "success",
-        author: "Toxxic", // Adjusted author name as per your preference
-        code: 200,
+        status: data.status,
+        author: "Toxxic",  // Changing the author to "Toxxic"
+        code: data.code,
         data: {
-          model: "v3", // Assuming the model is always v3
-          response: data.response // The chatbot's response
+          model: data.data.model,    // Use the same model
+          response: data.data.response  // Relay the chatbot's response
         }
       });
 
