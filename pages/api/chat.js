@@ -17,13 +17,13 @@ export default async function handler(req, res) {
         },
       });
 
-      const data = await response.json();
+      const data = await data.response.json();
 
       if (!response.ok) {
         throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
 
-      const answer = data.answer; // Adjust based on the actual structure of the response
+      const answer = data.response; // Adjust based on the actual structure of the response
       res.status(200).json({ answer });
 
     } catch (error) {
