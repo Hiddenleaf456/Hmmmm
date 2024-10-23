@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   if ((req.method === 'GET' || req.method === 'POST') && question) {
     try {
       // Fetch API key from environment variables
-      const apiKey = sk-TGhX2mUrViSyAzqhOoVCzgmV1tpUdj2Jkn9_WWnyTUT3BlbkFJiji_I9fH_riCLebSs3V2lXPJPYUrFOLvoLGg4-MHQA;
+      const apiKey = process.env.OPENAI_API_KEY;
 
       if (!apiKey) {
         throw new Error('Missing OpenAI API key in environment variables');
