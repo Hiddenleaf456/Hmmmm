@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     try {
       // Fetch API key from environment variables
-      const apiKey = process.env.IMGBB_API_KEY;
+      const apiKey = '7c3a5f334f62218feb38ac45d5c4a624';
 
       if (!apiKey) {
         throw new Error('Missing ImgBB API key in environment variables');
