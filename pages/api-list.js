@@ -38,7 +38,7 @@ export default function ApiList() {
             borderRadius: '8px',
             fontSize: '1.2rem',
             textDecoration: 'none',
-            marginBottom: '10px', // Small space between buttons
+            marginBottom: '30px', // Small space between buttons
             transition: 'background-color 0.3s ease, transform 0.3s ease',
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
           }}
@@ -63,7 +63,7 @@ export default function ApiList() {
             borderRadius: '8px',
             fontSize: '1.2rem',
             textDecoration: 'none',
-            marginBottom: '10px',
+            marginBottom: '30px',
             transition: 'background-color 0.3s ease, transform 0.3s ease',
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
           }}
@@ -88,7 +88,7 @@ export default function ApiList() {
             borderRadius: '8px',
             fontSize: '1.2rem',
             textDecoration: 'none',
-            marginBottom: '10px',
+            marginBottom: '30px',
             transition: 'background-color 0.3s ease, transform 0.3s ease',
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
           }}
