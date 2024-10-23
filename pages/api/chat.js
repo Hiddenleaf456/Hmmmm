@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         author: "Toxxic",  // Changing the author to "Toxxic"
         code: data.code,
         data: {
-          model: v1,    // Use the same model
+          model: data.data.model,    // Use the same model
           response: data.data.response  // Relay the chatbot's response
         }
       });
