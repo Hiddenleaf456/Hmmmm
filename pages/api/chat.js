@@ -17,21 +17,39 @@ export default async function handler(req, res) {
         },
       });
 
-      const data = await data.response.json();
+      const data = await response.json();
 
       if (!response.ok) {
         throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
 
-      const answer = data.response; // Adjust based on the actual structure of the response
-      res.status(200).json({ answer });
+      // Return the response in the required format
+      res.status(200).json({
+        status: "success",
+        author: "Toxxic", // Adjusted author name as per your preference
+        code: 200,
+        data: {
+          model: "v3", // Assuming the model is always v3
+          response: data.response // The chatbot's response
+        }
+      });
 
     } catch (error) {
       console.error('Error:', error);
-      res.status(500).json({ error: error.message || 'Internal Server Error' });
+      res.status(500).json({
+        status: "error",
+        author: "Toxxic",
+        code: 500,
+        message: error.message || 'Internal Server Error'
+      });
     }
   } else {
     res.setHeader('Allow', ['GET', 'POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).json({
+      status: "error",
+      author: "Toxxic",
+      code: 405,
+      message: `Method ${req.method} Not Allowed`
+    });
   }
 }
