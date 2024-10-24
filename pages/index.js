@@ -116,9 +116,9 @@ export default function Dashboard() {
             textAlign: 'center',
             width: '300px',
           }}>
-            <h2 style={{ margin: 0 }}>API Key Information</h2>
+            <h2 style={{ margin: 0 }}>API Key Giveaway</h2>
             <p style={{ margin: '10px 0' }}>
-              Use our free API key: <strong>toxxicboy</strong> for up to 500 requests.
+              Yo Since we Are Launching Use Our Free Apikey: <strong>toxxicboy</strong> and get 500 requests on all endpoints.
             </p>
             <button onClick={closeModal} style={{
               backgroundColor: '#00e676',
