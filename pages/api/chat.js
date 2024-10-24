@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { apiKeyMiddleware } from '../lib/apiKeyMiddleware';
+import { apiKeyMiddleware } from '../../lib/apiKeyMiddleware';
 
 // Create a wrapper to apply the middleware
 const withApiKeyMiddleware = (handler) => {
