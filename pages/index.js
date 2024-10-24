@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export default function Dashboard() {
   const [uptime, setUptime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [showModal, setShowModal] = useState(true); // State to control modal visibility
 
   useEffect(() => {
     const fetchUptime = async () => {
@@ -17,6 +18,10 @@ export default function Dashboard() {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
+
+  const closeModal = () => {
+    setShowModal(false); // Close the modal
+  };
 
   return (
     <div style={{
@@ -88,6 +93,48 @@ export default function Dashboard() {
           </a>
         </Link>
       </div>
+
+      {/* Modal for API Key Information */}
+      {showModal && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 1000,
+        }}>
+          <div style={{
+            backgroundColor: '#fff',
+            color: '#000',
+            padding: '20px',
+            borderRadius: '10px',
+            textAlign: 'center',
+            width: '300px',
+          }}>
+            <h2 style={{ margin: 0 }}>API Key Information</h2>
+            <p style={{ margin: '10px 0' }}>
+              Use our free API key: <strong>toxxicboy</strong> for up to 500 requests.
+            </p>
+            <button onClick={closeModal} style={{
+              backgroundColor: '#00e676',
+              color: '#000',
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              marginTop: '15px',
+              fontSize: '1rem',
+            }}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+                }
