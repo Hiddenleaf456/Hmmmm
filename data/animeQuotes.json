@@ -26,5 +26,186 @@
     "quote": "A lesson without pain is meaningless. That's because no one can gain without sacrificing something.", 
     "author": "Toxxic", 
     "status": "philosophical" 
+  },
+  { 
+    "anime": "My Hero Academia", 
+    "character": "All Might", 
+    "quote": "When you have to save someone, you don’t think about the risks!", 
+    "author": "Toxxic", 
+    "status": "heroic" 
+  },
+  { 
+    "anime": "Death Note", 
+    "character": "Light Yagami", 
+    "quote": "I am Justice! I protect the helpless. I am the one who will become the god of a new world!", 
+    "author": "Toxxic", 
+    "status": "intense" 
+  },
+  { 
+    "anime": "Demon Slayer", 
+    "character": "Tanjiro Kamado", 
+    "quote": "I will always protect you. I swear on my name as a Demon Slayer!", 
+    "author": "Toxxic", 
+    "status": "dedicated" 
+  },
+  { 
+    "anime": "Sword Art Online", 
+    "character": "Kirito", 
+    "quote": "I'd rather trust and regret than doubt and regret.", 
+    "author": "Toxxic", 
+    "status": "trusting" 
+  },
+  { 
+    "anime": "Fairy Tail", 
+    "character": "Natsu Dragneel", 
+    "quote": "I don’t care what happens, I’ll never give up!", 
+    "author": "Toxxic", 
+    "status": "resilient" 
+  },
+  { 
+    "anime": "Tokyo Ghoul", 
+    "character": "Ken Kaneki", 
+    "quote": "It's not the world that's messed up; it's those of us in it.", 
+    "author": "Toxxic", 
+    "status": "reflective" 
+  },
+  { 
+    "anime": "One Punch Man", 
+    "character": "Saitama", 
+    "quote": "I'm just a guy who's a hero for fun.", 
+    "author": "Toxxic", 
+    "status": "humorous" 
+  },
+  { 
+    "anime": "Code Geass", 
+    "character": "Lelouch Lamperouge", 
+    "quote": "The world is not beautiful. Therefore, it is.", 
+    "author": "Toxxic", 
+    "status": "philosophical" 
+  },
+  { 
+    "anime": "Your Name", 
+    "character": "Taki Tachibana", 
+    "quote": "I wanted to see you. Even if it was just for a moment.", 
+    "author": "Toxxic", 
+    "status": "romantic" 
+  },
+  { 
+    "anime": "Mob Psycho 100", 
+    "character": "Shigeo Kageyama (Mob)", 
+    "quote": "You can’t just let things happen. You have to make them happen.", 
+    "author": "Toxxic", 
+    "status": "motivational" 
+  },
+  { 
+    "anime": "Hunter x Hunter", 
+    "character": "Gon Freecss", 
+    "quote": "I don't care what happens to me. I just want to find my dad.", 
+    "author": "Toxxic", 
+    "status": "determined" 
+  },
+  { 
+    "anime": "The Promised Neverland", 
+    "character": "Emma", 
+    "quote": "We can’t let ourselves be caught up in despair.", 
+    "author": "Toxxic", 
+    "status": "hopeful" 
+  },
+  { 
+    "anime": "Re:Zero", 
+    "character": "Subaru Natsuki", 
+    "quote": "If you can’t see the light, then you have to create it yourself.", 
+    "author": "Toxxic", 
+    "status": "determined" 
+  },
+  { 
+    "anime": "Black Clover", 
+    "character": "Asta", 
+    "quote": "I will never give up! I will never let anyone down!", 
+    "author": "Toxxic", 
+    "status": "resolute" 
+  },
+  { 
+    "anime": "Fate/Stay Night", 
+    "character": "Shirou Emiya", 
+    "quote": "I don't want to be a hero, but I want to protect everyone!", 
+    "author": "Toxxic", 
+    "status": "selfless" 
+  },
+  { 
+    "anime": "Bleach", 
+    "character": "Ichigo Kurosaki", 
+    "quote": "I don't care what happens. I'll protect what's important to me!", 
+    "author": "Toxxic", 
+    "status": "protective" 
+  },
+  { 
+    "anime": "Sword Art Online", 
+    "character": "Asuna Yuuki", 
+    "quote": "I'll be by your side, no matter what.", 
+    "author": "Toxxic", 
+    "status": "loyal" 
+  },
+  { 
+    "anime": "Assassination Classroom", 
+    "character": "Koro-sensei", 
+    "quote": "The future is a blank slate. The past is just a prologue.", 
+    "author": "Toxxic", 
+    "status": "inspirational" 
+  },
+  { 
+    "anime": "Noragami", 
+    "character": "Yato", 
+    "quote": "I don't care what happens to me, as long as you are happy.", 
+    "author": "Toxxic", 
+    "status": "selfless" 
+  },
+  { 
+    "anime": "Mob Psycho 100", 
+    "character": "Reigen Arataka", 
+    "quote": "It’s not about being the best; it’s about doing your best.", 
+    "author": "Toxxic", 
+    "status": "encouraging" 
+  },
+  { 
+    "anime": "Fairy Tail", 
+    "character": "Erza Scarlet", 
+    "quote": "We don’t always get what we want, but we can still fight for what we believe in.", 
+    "author": "Toxxic", 
+    "status": "resilient" 
+  },
+  { 
+    "anime": "Death Parade", 
+    "character": "Decim", 
+    "quote": "Death is just the beginning of a new story.", 
+    "author": "Toxxic", 
+    "status": "philosophical" 
+  },
+  { 
+    "anime": "Fruits Basket", 
+    "character": "Tohru Honda", 
+    "quote": "I want to be a light for others.", 
+    "author": "Toxxic", 
+    "status": "hopeful" 
+  },
+  { 
+    "anime": "Gintama", 
+    "character": "Gintoki Sakata", 
+    "quote": "The world isn’t beautiful. Therefore, it is.", 
+    "author": "Toxxic", 
+    "status": "realistic" 
+  },
+  { 
+    "anime": "Soul Eater", 
+    "character": "Maka Albarn", 
+    "quote": "I will fight to protect those who are important to me!", 
+    "author": "Toxxic", 
+    "status": "determined" 
+  },
+  { 
+    "anime": "Naruto", 
+    "character": "Sasuke Uchiha", 
+    "quote": "I have my own path to follow.", 
+    "author": "Toxxic", 
+    "status": "determined" 
   }
-]
