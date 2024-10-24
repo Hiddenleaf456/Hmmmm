@@ -32,7 +32,7 @@ export default function ApiList() {
           flexDirection: 'column',
           gap: '42px', // Space between buttons
         }}>
-          {/** GPT-3 API **/}
+          {/** GPT-4 API **/}
           <Link href="/api/chat?question=hello">
             <a style={{
               backgroundColor: '#00e676',
@@ -56,7 +56,30 @@ export default function ApiList() {
               GPT-4 API
             </a>
           </Link>
-
+{/** Anime API **/}
+          <Link href="/api/animeQuotes">
+            <a style={{
+              backgroundColor: '#00e676',
+              color: '#000',
+              padding: '15px 30px',
+              borderRadius: '10px',
+              fontSize: '1.3rem',
+              textDecoration: 'none',
+              textAlign: 'left', // Align text to the left
+              transition: 'background-color 0.3s ease, transform 0.3s ease',
+              boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
+            }}
+            onMouseOver={e => {
+              e.target.style.backgroundColor = '#00c853';
+              e.target.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={e => {
+              e.target.style.backgroundColor = '#00e676';
+              e.target.style.transform = 'scale(1)';
+            }}>
+              ANIME QUOTES
+            </a>
+          </Link>
         
           {/** YouTube Download API **/}
           <Link href="/api/ytdl?query=oseba">
