@@ -4,6 +4,7 @@ import Link from 'next/link';
 export default function Dashboard() {
   const [uptime, setUptime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [ipAddress, setIpAddress] = useState('');
+  const [batteryStatus, setBatteryStatus] = useState(null);
   const [showModal, setShowModal] = useState(true); // State to control modal visibility
 
   useEffect(() => {
@@ -25,11 +26,37 @@ export default function Dashboard() {
 
     const interval = setInterval(fetchUptime, 10000); // Update uptime every 10 seconds
 
+    // Battery Status API
+    const getBatteryStatus = async () => {
+      if ('getBattery' in navigator) {
+        const battery = await navigator.getBattery();
+        setBatteryStatus(battery);
+      } else {
+        console.warn('Battery Status API not supported in this browser.');
+      }
+    };
+
+    getBatteryStatus();
+
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   const closeModal = () => {
     setShowModal(false); // Close the modal
+  };
+
+  // Display battery information if available
+  const renderBatteryStatus = () => {
+    if (!batteryStatus) return <p>Battery status information is not available.</p>;
+
+    const { level, charging } = batteryStatus;
+
+    return (
+      <p style={{ fontSize: '1.5rem', marginTop: '20px', color: '#b3b3b3' }}>
+        Battery Level: {Math.round(level * 100)}% <br />
+        Status: {charging ? 'Charging' : 'Not Charging'}
+      </p>
+    );
   };
 
   return (
@@ -81,6 +108,9 @@ export default function Dashboard() {
       }}>
         Your IP address: <strong>{ipAddress}</strong>
       </p>
+
+      {/* Battery Status Display */}
+      {renderBatteryStatus()}
 
       <div style={{
         display: 'flex',
@@ -155,4 +185,4 @@ export default function Dashboard() {
       )}
     </div>
   );
-}
+                }
