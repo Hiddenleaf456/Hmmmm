@@ -105,7 +105,7 @@ export default function ApiList() {
               TXT2IMG API
             </a>
           </Link>
-          {/** YouTube Download API **/}
+          {/** YouTube Search API **/}
           <Link href="/api/ytdl?query=oseba">
             <a style={{
               backgroundColor: '#00e676',
@@ -127,6 +127,30 @@ export default function ApiList() {
               e.target.style.transform = 'scale(1)';
             }}>
               YT SEARCH
+            </a>
+          </Link>
+                {/** YouTube Download API **/}
+          <Link href="/api/ytdl2?query=oseba&apikey=toxxicboy">
+            <a style={{
+              backgroundColor: '#00e676',
+              color: '#000',
+              padding: '15px 30px',
+              borderRadius: '10px',
+              fontSize: '1.3rem',
+              textDecoration: 'none',
+              textAlign: 'left',
+              transition: 'background-color 0.3s ease, transform 0.3s ease',
+              boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
+            }}
+            onMouseOver={e => {
+              e.target.style.backgroundColor = '#00c853';
+              e.target.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={e => {
+              e.target.style.backgroundColor = '#00e676';
+              e.target.style.transform = 'scale(1)';
+            }}>
+              YTMP3 AND YTMP4
             </a>
           </Link>
         </div>
