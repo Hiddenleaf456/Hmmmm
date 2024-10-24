@@ -82,7 +82,7 @@ export default function ApiList() {
           </Link>
         
           {/** Txt2Img Download API **/}
-          <Link href="/api/txt2img?prompt=goku">
+          <Link href="/api/txt2img?prompt=goku&apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
