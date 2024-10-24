@@ -126,7 +126,7 @@ export default function ApiList() {
               e.target.style.backgroundColor = '#00e676';
               e.target.style.transform = 'scale(1)';
             }}>
-              YTDL QUERY
+              YT SEARCH
             </a>
           </Link>
         </div>
