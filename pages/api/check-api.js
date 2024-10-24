@@ -1,10 +1,12 @@
+// check-api.js
+
 import rateLimit from '../../lib/rateLimiter';
 
 // Retrieve API keys from environment variables
 const API_KEYS = JSON.parse(process.env.API_KEYS);
 
-// Define a shared limit for all users (in this case, based on toxxicboy's limit)
-const sharedLimit = 400;
+// Define time window and shared limit
+const timeWindow = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 const handler = (req, res) => {
   const apiKey = req.query.apikey;
@@ -23,10 +25,8 @@ const handler = (req, res) => {
     return res.status(403).json({ error: 'API key expired. Please contact Toxxic for renewal.' });
   }
 
-  const timeWindow = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-
-  // Apply the rate limiter globally
-  rateLimit(sharedLimit, timeWindow)(req, res, () => {
+  // Apply the rate limiter specific to the API key
+  rateLimit(limit === 'unlimited' ? Infinity : limit, timeWindow)(req, res, () => {
     res.status(200).json({ message: 'Request successful' });
   });
 };
