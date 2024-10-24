@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "next": "latest",
+    "@google-cloud/text-to-speech": "^3.0.0",
     "react": "latest",
     "react-dom": "latest",
     "node-fetch": "^2.6.7",  
