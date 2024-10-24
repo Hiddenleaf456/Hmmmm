@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export default function Dashboard() {
   const [uptime, setUptime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [ipAddress, setIpAddress] = useState('');
   const [showModal, setShowModal] = useState(true); // State to control modal visibility
 
   useEffect(() => {
@@ -12,9 +13,17 @@ export default function Dashboard() {
       setUptime(data);
     };
 
-    // Fetch uptime initially and then every 10 seconds
+    const fetchIpAddress = async () => {
+      const response = await fetch('/api/get-ip');
+      const data = await response.json();
+      setIpAddress(data.ip);
+    };
+
+    // Fetch uptime and IP address initially
     fetchUptime();
-    const interval = setInterval(fetchUptime, 10000); // Update every 10 seconds
+    fetchIpAddress();
+
+    const interval = setInterval(fetchUptime, 10000); // Update uptime every 10 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -62,6 +71,15 @@ export default function Dashboard() {
         color: '#b3b3b3',
       }}>
         Uptime: {uptime.days} days, {uptime.hours} hours, {uptime.minutes} minutes, {uptime.seconds} seconds
+      </p>
+
+      {/* IP Address Display */}
+      <p style={{
+        fontSize: '1.5rem',
+        marginTop: '20px',
+        color: '#b3b3b3',
+      }}>
+        Your IP address: <strong>{ipAddress}</strong>
       </p>
 
       <div style={{
@@ -133,8 +151,3 @@ export default function Dashboard() {
               Close
             </button>
           </div>
-        </div>
-      )}
-    </div>
-  );
-                }
