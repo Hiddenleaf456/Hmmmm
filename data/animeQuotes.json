@@ -1,6 +1,30 @@
 [
-  { "anime": "Naruto", "character": "Naruto Uzumaki", "quote": "I won't run away anymore... I won't go back on my word... that is my ninja way!" },
-  { "anime": "Attack on Titan", "character": "Eren Yeager", "quote": "If you win, you live. If you lose, you die. If you don't fight, you can't win!" },
-  { "anime": "One Piece", "character": "Monkey D. Luffy", "quote": "I'm going to become the Pirate King!" },
-  { "anime": "Fullmetal Alchemist", "character": "Edward Elric", "quote": "A lesson without pain is meaningless. That's because no one can gain without sacrificing something." }
+  { 
+    "anime": "Naruto", 
+    "character": "Naruto Uzumaki", 
+    "quote": "I won't run away anymore... I won't go back on my word... that is my ninja way!", 
+    "author": "Toxxic", 
+    "status": "inspired" 
+  },
+  { 
+    "anime": "Attack on Titan", 
+    "character": "Eren Yeager", 
+    "quote": "If you win, you live. If you lose, you die. If you don't fight, you can't win!", 
+    "author": "Toxxic", 
+    "status": "motivational" 
+  },
+  { 
+    "anime": "One Piece", 
+    "character": "Monkey D. Luffy", 
+    "quote": "I'm going to become the Pirate King!", 
+    "author": "Toxxic", 
+    "status": "determined" 
+  },
+  { 
+    "anime": "Fullmetal Alchemist", 
+    "character": "Edward Elric", 
+    "quote": "A lesson without pain is meaningless. That's because no one can gain without sacrificing something.", 
+    "author": "Toxxic", 
+    "status": "philosophical" 
+  }
 ]
