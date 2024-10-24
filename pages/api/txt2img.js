@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { apiKeyMiddleware } from './lib/apiKeyMiddleware'; // Adjust the path as necessary
+import { apiKeyMiddleware } from '.../.../lib/apiKeyMiddleware'; // Adjust the path as necessary
 
 export default async function handler(req, res) {
     // Use the API key middleware
