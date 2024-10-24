@@ -33,7 +33,7 @@ export default function ApiList() {
           gap: '42px', // Space between buttons
         }}>
           {/** GPT-4 API **/}
-          <Link href="/api/chat?question=hello">
+          <Link href="/api/chat?question=hello&apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
