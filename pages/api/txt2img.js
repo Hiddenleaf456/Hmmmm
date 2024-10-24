@@ -1,18 +1,14 @@
 import axios from 'axios';
-import { apiKeyMiddleware } from '.../.../lib/apiKeyMiddleware'; // Adjust the path as necessary
+import { apiKeyMiddleware } from '../../lib/apiKeyMiddleware';
 
-export default async function handler(req, res) {
-    // Use the API key middleware
-    await new Promise((resolve, reject) => {
-        apiKeyMiddleware(req, res, (result) => {
-            if (result instanceof Error) {
-                reject(result);
-            } else {
-                resolve(result);
-            }
-        });
+// Create a wrapper to apply the middleware
+const withApiKeyMiddleware = (handler) => {
+  return (req, res) => {
+    apiKeyMiddleware(req, res, () => {
+      handler(req, res);
     });
-
+  };
+};
     if (req.method === 'GET') {
         const { prompt } = req.query;
 
