@@ -151,3 +151,8 @@ export default function Dashboard() {
               Close
             </button>
           </div>
+        </div>
+      )}
+    </div>
+  );
+}
