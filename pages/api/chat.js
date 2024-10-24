@@ -1,6 +1,16 @@
 import fetch from 'node-fetch';
+import { apiKeyMiddleware } from '../../lib/apiKeyMiddleware';
 
-export default async function handler(req, res) {
+// Create a wrapper to apply the middleware
+const withApiKeyMiddleware = (handler) => {
+  return (req, res) => {
+    apiKeyMiddleware(req, res, () => {
+      handler(req, res);
+    });
+  };
+};
+
+const handler = async (req, res) => {
   const { query, body } = req;
   const question = req.method === 'GET' ? query.question : body.question;
 
@@ -52,4 +62,7 @@ export default async function handler(req, res) {
       message: `Method ${req.method} Not Allowed`
     });
   }
-}
+};
+
+// Export the wrapped handler
+export default withApiKeyMiddleware(handler);
