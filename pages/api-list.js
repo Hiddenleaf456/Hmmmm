@@ -130,7 +130,7 @@ export default function ApiList() {
             </a>
           </Link>
                 {/** YouTube Download API **/}
-          <Link href="/api/ytdl2?query=oseba&apikey=toxxicboy">
+          <Link href="/api/ytdl2?title=oseba&apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
