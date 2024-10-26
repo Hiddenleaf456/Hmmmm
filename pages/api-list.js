@@ -177,6 +177,30 @@ export default function ApiList() {
               IP API
             </a>
           </Link>
+                {/** LYRICS**/}
+          <Link href="/api/song?apikey=toxxicboy&song=believer">
+            <a style={{
+              backgroundColor: '#00e676',
+              color: '#000',
+              padding: '15px 30px',
+              borderRadius: '10px',
+              fontSize: '1.3rem',
+              textDecoration: 'none',
+              textAlign: 'left',
+              transition: 'background-color 0.3s ease, transform 0.3s ease',
+              boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
+            }}
+            onMouseOver={e => {
+              e.target.style.backgroundColor = '#00c853';
+              e.target.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={e => {
+              e.target.style.backgroundColor = '#00e676';
+              e.target.style.transform = 'scale(1)';
+            }}>
+              LYRICS API
+            </a>
+          </Link>
         </div>
       </div>
 
