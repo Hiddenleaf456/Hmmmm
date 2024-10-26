@@ -202,7 +202,7 @@ export default function ApiList() {
             </a>
           </Link>
                 {/** LINES**/}
-          <Link href="/api/pickup?apikey=toxxicboy">
+          <Link href="/api/line?apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
