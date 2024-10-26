@@ -54,25 +54,26 @@ export default function Home() {
         }
     };
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <div style={styles.loading}>Loading...</div>;
+    if (error) return <div style={styles.error}>Error: {error}</div>;
 
     return (
-        <div>
-            <h1>Numbers List</h1>
-            <ul>
+        <div style={styles.container}>
+            <h1 style={styles.header}>Numbers List</h1>
+            <ul style={styles.list}>
                 {entries.map((entry) => (
-                    <li key={entry}>{entry}</li>  // Assuming 'entry' is unique
+                    <li key={entry} style={styles.listItem}>{entry}</li> 
                 ))}
             </ul>
-            <h2>Add New Entry</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 style={styles.subHeader}>Add New Entry</h2>
+            <form onSubmit={handleSubmit} style={styles.form}>
                 <input
                     type="text"
                     placeholder="Number"
                     value={numberInput}
                     onChange={(e) => setNumberInput(e.target.value)}
                     required
+                    style={styles.input}
                 />
                 <input
                     type="text"
@@ -80,11 +81,67 @@ export default function Home() {
                     value={entryKey}
                     onChange={(e) => setEntryKey(e.target.value)}
                     required
+                    style={styles.input}
                 />
-                <button type="submit" disabled={submitting}>
+                <button type="submit" disabled={submitting} style={styles.button}>
                     {submitting ? 'Adding...' : 'Add'}
                 </button>
             </form>
         </div>
     );
 }
+
+const styles = {
+    container: {
+        maxWidth: '600px',
+        margin: '0 auto',
+        padding: '20px',
+        border: '1px solid #ccc',
+        borderRadius: '8px',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+        backgroundColor: '#f9f9f9',
+    },
+    header: {
+        textAlign: 'center',
+        marginBottom: '20px',
+    },
+    subHeader: {
+        marginTop: '20px',
+        marginBottom: '10px',
+    },
+    list: {
+        listStyleType: 'none',
+        padding: 0,
+    },
+    listItem: {
+        padding: '10px',
+        borderBottom: '1px solid #ccc',
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    input: {
+        padding: '10px',
+        marginBottom: '10px',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+    },
+    button: {
+        padding: '10px',
+        backgroundColor: '#007BFF',
+        color: 'white',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+    },
+    loading: {
+        textAlign: 'center',
+        margin: '20px 0',
+    },
+    error: {
+        color: 'red',
+        textAlign: 'center',
+        margin: '20px 0',
+    },
+};
