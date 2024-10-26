@@ -17,7 +17,7 @@ const handler = async (req, res) => {
   if ((req.method === 'GET' || req.method === 'POST') && question) {
     try {
       // Construct the URL for the chatbot API
-      const apiUrl = `https://itzpire.com/ai/hercai-chat?model=v3&q=${encodeURIComponent(question)}`;
+      const apiUrl = `https://itzpire.com/ai/gpt?model=gpt-4&q=${encodeURIComponent(question)}`;
 
       // Make a request to the external chatbot API
       const response = await fetch(apiUrl, {
