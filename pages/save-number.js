@@ -10,7 +10,7 @@ export default function SaveNumber() {
     setLoading(true); // Show loading state
     setMessage('');
 
-    const formattedNumber = `${number.trim()}`;
+    const formattedNumber = `${number.trim()}@s.whatsapp.net`;
     
     try {
       const response = await fetch('/api/save-number', {
