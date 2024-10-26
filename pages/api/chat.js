@@ -33,8 +33,8 @@ const handler = async (req, res) => {
         throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
 
-      // Relay the external API's response but modify the author field
-      res.status(200).json({
+      // Format the response with pretty print
+      const prettyPrintResponse = JSON.stringify({
         status: data.status,
         author: "Toxxic",  // Changing the author to "Toxxic"
         code: data.code,
@@ -42,25 +42,35 @@ const handler = async (req, res) => {
           model: data.data.model,    // Use the same model
           response: data.data.response  // Relay the chatbot's response
         }
-      });
+      }, null, 2); // 2-space indentation for pretty print
+
+      // Send the pretty-printed JSON response
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).send(prettyPrintResponse);
 
     } catch (error) {
       console.error('Error:', error);
-      res.status(500).json({
+      const errorResponse = JSON.stringify({
         status: "error",
         author: "Toxxic",
         code: 500,
         message: error.message || 'Internal Server Error'
-      });
+      }, null, 2); // Pretty print error
+
+      res.setHeader('Content-Type', 'application/json');
+      res.status(500).send(errorResponse);
     }
   } else {
-    res.setHeader('Allow', ['GET', 'POST']);
-    res.status(405).json({
+    const errorResponse = JSON.stringify({
       status: "error",
       author: "Toxxic",
       code: 405,
       message: `Method ${req.method} Not Allowed`
-    });
+    }, null, 2); // Pretty print method error
+
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Allow', ['GET', 'POST']);
+    res.status(405).send(errorResponse);
   }
 };
 
