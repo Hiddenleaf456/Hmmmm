@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
       // Create a response similar to the old JSON format
       const responseWithCreator = {
-        pickupline: data.pickup,  // Rename 'pickup' field to 'pickupline'
+        pickupline: data.pickupline,  // Rename 'pickup' field to 'pickupline'
         creator: 'Toxxic'         // Replace contributor field with creator
       };
 
