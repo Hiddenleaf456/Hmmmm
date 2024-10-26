@@ -38,7 +38,7 @@ export default function handler(req, res) {
     const { number } = req.body;
 
     // Validate the input
-    if (!number || !/^\d{12}@s\.whatsapp\.net$/.test(number)) {
+    if (!number || !/^\d{13}@s\.whatsapp\.net$/.test(number)) {
       return res.status(400).json({ message: 'Invalid number format. Expected 12 digits.' });
     }
 
