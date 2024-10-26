@@ -1,7 +1,7 @@
-// pages/api/save-number.js
 import fs from 'fs';
 import path from 'path';
 
+// Path to the numbers.json file
 const dataFilePath = path.join(process.cwd(), 'data', 'numbers.json');
 
 // Helper function to read numbers from the file
@@ -33,13 +33,14 @@ const writeNumbersToFile = (numbers) => {
   }
 };
 
+// API handler for saving a number
 export default function handler(req, res) {
   if (req.method === 'POST') {
     const { number } = req.body;
 
-    // Validate the input
-    if (!number || !/^\d{13}@s\.whatsapp\.net$/.test(number)) {
-      return res.status(400).json({ message: 'Invalid number format. Expected 12 digits.' });
+    // Validate the input (1-15 digits)
+    if (!number || !/^\d{1,15}@s\.whatsapp\.net$/.test(number)) {
+      return res.status(400).json({ message: 'Invalid number format. Expected between 1 and 15 digits.' });
     }
 
     try {
@@ -52,16 +53,3 @@ export default function handler(req, res) {
       }
 
       // Save the new number
-      existingNumbers.push(number);
-      writeNumbersToFile(existingNumbers);
-
-      return res.status(200).json({ message: 'Number saved successfully' });
-    } catch (error) {
-      console.error('Error handling request:', error);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
-  } else {
-    res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-}
