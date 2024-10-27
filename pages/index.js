@@ -141,11 +141,17 @@ export default function Dashboard() {
           </a>
         </Link>
       </div>
-{/* Button to view Prices */}
+
+      {/* New Button to Buy Premium API Key */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '20px',
+      }}>
         <Link href="/pricing">
           <a style={{
-            backgroundColor: '#00e676',
-            color: '#000',
+            backgroundColor: '#ff1744',
+            color: '#fff',
             padding: '14px 28px',
             borderRadius: '8px',
             fontSize: '1.2rem',
@@ -154,14 +160,14 @@ export default function Dashboard() {
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
           }}
           onMouseOver={e => {
-            e.target.style.backgroundColor = '#00c853';
+            e.target.style.backgroundColor = '#d50000';
             e.target.style.transform = 'scale(1.05)';
           }}
           onMouseOut={e => {
-            e.target.style.backgroundColor = '#00e676';
+            e.target.style.backgroundColor = '#ff1744';
             e.target.style.transform = 'scale(1)';
           }}>
-            Buy Premium Apikeys
+            Buy Premium API Key
           </a>
         </Link>
       </div>
@@ -209,4 +215,4 @@ export default function Dashboard() {
       )}
     </div>
   );
-    }
+}
