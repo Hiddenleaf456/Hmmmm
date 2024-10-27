@@ -17,7 +17,7 @@ const handler = async (req, res) => {
   if ((req.method === 'GET' || req.method === 'POST') && question) {
     try {
       // Construct the URL for the chatbot API
-      const apiUrl = `https://api.popcat.xyz/chatbot?msg=${encodeURIComponent(question)}&owner=Toxxic+Md&botname=Rias+Ai`;
+      const apiUrl = ``;
 
       // Make a request to the external chatbot API
       const response = await fetch(apiUrl, {
