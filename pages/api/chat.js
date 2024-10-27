@@ -3,8 +3,8 @@ import { apiKeyMiddleware } from '../../lib/apiKeyMiddleware';
 
 // Create a wrapper to apply the middleware
 const withApiKeyMiddleware = (handler) => {
-  return (req, res) => {
-    apiKeyMiddleware(req, res, () => {
+  return async (req, res) => {
+    await apiKeyMiddleware(req, res, () => {
       handler(req, res);
     });
   };
@@ -27,11 +27,14 @@ const handler = async (req, res) => {
         },
       });
 
-      const data = await response.json();
-
+      // Check if the external API responded correctly
       if (!response.ok) {
+        const data = await response.json();
         throw new Error(data.error?.message || 'Failed to fetch from chatbot API');
       }
+
+      // Parse the response from the chatbot API
+      const data = await response.json();
 
       // Format the response with pretty print
       const prettyPrintResponse = JSON.stringify({
