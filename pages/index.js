@@ -141,6 +141,30 @@ export default function Dashboard() {
           </a>
         </Link>
       </div>
+{/* Button to view Prices */}
+        <Link href="/pricing">
+          <a style={{
+            backgroundColor: '#00e676',
+            color: '#000',
+            padding: '14px 28px',
+            borderRadius: '8px',
+            fontSize: '1.2rem',
+            textDecoration: 'none',
+            transition: 'background-color 0.3s ease, transform 0.3s ease',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+          }}
+          onMouseOver={e => {
+            e.target.style.backgroundColor = '#00c853';
+            e.target.style.transform = 'scale(1.05)';
+          }}
+          onMouseOut={e => {
+            e.target.style.backgroundColor = '#00e676';
+            e.target.style.transform = 'scale(1)';
+          }}>
+            Buy Premium Apikeys
+          </a>
+        </Link>
+      </div>
 
       {/* Modal for API Key Information */}
       {showModal && (
@@ -166,7 +190,7 @@ export default function Dashboard() {
           }}>
             <h2 style={{ margin: 0 }}>API Key Giveaway</h2>
             <p style={{ margin: '10px 0' }}>
-              Yo Since we Are Launching Use Our Free Apikey: <strong>toxxicboy</strong> and get 500 requests on all endpoints.
+              Yo Since we Are Launching Use Our Free Apikey: <strong>toxxicboy</strong> and get 100 requests on all endpoints.
             </p>
             <button onClick={closeModal} style={{
               backgroundColor: '#00e676',
