@@ -17,7 +17,7 @@ const handler = async (req, res) => {
   if ((req.method === 'GET' || req.method === 'POST') && question) {
     try {
       // Construct the URL for the chatbot API
-      const apiUrl = `https://itzpire.com/ai/gpt?model=gpt-4&q=${encodeURIComponent(question)}`;
+      const apiUrl = `https://api.popcat.xyz/chatbot?msg=${encodeURIComponent(question)}&owner=Toxxic+Md&botname=Rias+Ai`;
 
       // Make a request to the external chatbot API
       const response = await fetch(apiUrl, {
@@ -39,11 +39,10 @@ const handler = async (req, res) => {
       // Format the response with pretty print
       const prettyPrintResponse = JSON.stringify({
         status: data.status,
-        author: "Toxxic",  // Changing the author to "Toxxic"
+        author: "Toxxic",  // Keeping the author as Toxxic
         code: data.code,
         data: {
-          model: data.data.model,    // Use the same model
-          response: data.data.response  // Relay the chatbot's response
+          response: data.response  // Relay the chatbot's response
         }
       }, null, 2); // 2-space indentation for pretty print
 
