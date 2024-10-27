@@ -1,6 +1,5 @@
 // pages/upload.js
 import { useState } from 'react';
-import Link from 'next/link';
 
 const UploadPage = () => {
   const [file, setFile] = useState(null);
@@ -47,10 +46,6 @@ const UploadPage = () => {
         <button type="submit">Upload</button>
       </form>
       {message && <p>{message}</p>}
-      <p>
-        Want to see your uploaded files?{' '}
-        <Link href="/files">View Uploaded Files</Link>
-      </p>
     </div>
   );
 };
