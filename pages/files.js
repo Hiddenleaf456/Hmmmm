@@ -39,9 +39,6 @@ const FilesPage = () => {
           ))
         )}
       </ul>
-      <p>
-        Want to upload more files? <Link href="/upload">Go back to Upload</Link>
-      </p>
     </div>
   );
 };
