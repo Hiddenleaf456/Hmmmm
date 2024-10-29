@@ -226,7 +226,7 @@ export default function ApiList() {
             </a>
           </Link>
                 {/** LYRICS**/}
-          <Link href="/api/song?apikey=toxxicboy&song=believer">
+          <Link href="/api/translate?text=hello&lang=en&apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
