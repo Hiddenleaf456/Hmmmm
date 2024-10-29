@@ -202,7 +202,7 @@ export default function ApiList() {
             </a>
           </Link>
                 {/** TRANSLATE**/}
-          <Link href="/api/translate?text=hello&lang=en&apikey=toxxicboy">
+          <Link href="/api/line?apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
               color: '#000',
