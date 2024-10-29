@@ -225,7 +225,7 @@ export default function ApiList() {
               PICKUP LINES
             </a>
           </Link>
-                {/** LYRICS**/}
+                {/** translateS**/}
           <Link href="/api/translate?text=hello&lang=en&apikey=toxxicboy">
             <a style={{
               backgroundColor: '#00e676',
