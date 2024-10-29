@@ -1,22 +1,22 @@
-// pages/api/translate.js
+// /pages/api/translate.js
 import { apiKeyMiddleware } from '../../lib/apiKeyMiddleware';
 
 export default async function handler(req, res) {
-  // Middleware for API key validation
+  // Call the middleware
   apiKeyMiddleware(req, res, async () => {
-    const { text, lang } = req.query;
+    const { text, lang, apikey } = req.query;
 
-    // Validate input
+    // Validate input parameters
     if (!text || !lang) {
       return res.status(400).json({ error: 'Please provide both text and lang parameters' });
     }
 
     try {
-      // Fetch translation from the PopCat API
+      // Make the request to the translation API
       const response = await fetch(`https://api.popcat.xyz/translate?to=${lang}&text=${encodeURIComponent(text)}`);
       const data = await response.json();
 
-      // Format response with pretty print and author
+      // Send the response with pretty print and author
       res.status(200).json({
         author: "toxxic",
         translatedText: data.translated,
